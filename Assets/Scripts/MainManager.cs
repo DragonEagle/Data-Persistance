@@ -65,6 +65,14 @@ public class MainManager : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.LoadScene(0);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            ScreenCapture.CaptureScreenshot("Screenshot.png");
         }
     }
 
@@ -89,6 +97,7 @@ public class MainManager : MonoBehaviour
         {
             ScoreManager.instance.highScoreName = ScoreManager.instance.playerName;
             ScoreManager.instance.highScore = m_Points;
+            ScoreManager.instance.SaveHighScore();
         }
     }
 }
